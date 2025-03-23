@@ -1,6 +1,5 @@
 all the datasets must be kept in their respective directories
-
-There should be 2 folderes Pavlin_base and extras
+use download.sh file to get the files
 
 the dataset can be found at the following link for fast-sc-Batch paper 
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE84133
