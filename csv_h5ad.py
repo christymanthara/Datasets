@@ -4,6 +4,7 @@ import pandas as pd
 import anndata as ad
 import gzip
 from scipy.sparse import csr_matrix
+import numpy as np
 
 # Fix the path issue
 tar_path = r"datasets/extras/GSE84133_RAW.tar"  # Use raw string or forward slashes
@@ -42,6 +43,14 @@ for file in csv_gz_files:
         species = "mouse"
     elif "human" in file.lower():
         species = "human"
+
+    # Add unstructured metadata in desired format
+    adata.uns = {
+        "name": file.replace(".csv.gz", ""),
+        "organism": species,
+        "tissue": "pancreas",
+        "year": np.array([2025], dtype=np.int64)  # update dynamically if needed
+    }
 
     # Save as .h5ad
     h5ad_path = os.path.join(extract_path, f"{file.replace('.csv.gz', '')}_{species}.h5ad")
