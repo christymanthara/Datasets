@@ -7,7 +7,7 @@ from scipy.sparse import csr_matrix
 import numpy as np
 
 # Fix the path issue
-tar_path = r"datasets/extras/GSE84133_RAW.tar"  # Use raw string or forward slashes
+tar_path = r"Datasets\datasets\extras\GSE84133_RAW.tar"  # Use raw string or forward slashes
 extract_path = "extracted_csv"
 os.makedirs(extract_path, exist_ok=True)
 
